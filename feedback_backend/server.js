@@ -1,8 +1,16 @@
 const express = require("express");
 const server=require("./configs/server.config")
-const feedbackModel=require("./Models/feedbackModel")
+const bodyParser=require("body-parser")
 const app=express();
 const mongoose=require("mongoose")
+const feedbackRoute=require("./Routes/feedbackRoute")
+
+app.use(bodyParser.json());
+
+/**
+ * Stitch to Route
+ */
+app.use('/api',feedbackRoute)
 
 
 

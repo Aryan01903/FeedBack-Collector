@@ -8,7 +8,11 @@ const feedbackSchema=new mongoose.Schema({
     },
     email : {
         type : String,
-        required : true
+        required : true,
+        validate: {
+            validator: (v) => /\S+@\S+\.\S+/.test(v),               // email validation
+            message: (props) => `${props.value} is not a valid email!`,
+        },
     },
     feedback : {
         type : String,

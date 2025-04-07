@@ -4,8 +4,10 @@ const bodyParser=require("body-parser")
 const app=express();
 const mongoose=require("mongoose")
 const feedbackRoute=require("./Routes/feedbackRoute")
+const cors=require("cors")
 
 app.use(bodyParser.json());
+app.use(cors());
 
 /**
  * Stitch to Route

@@ -10,6 +10,6 @@ router.post("/submit-feedback",feedbackController.createNewFeedback);
 // Route to fetch all Feedbacks
 router.get("/admin/feedbacks",feedbackController.getAllFeedback)
 
-module.exports(router);
+module.exports=router;
 
 

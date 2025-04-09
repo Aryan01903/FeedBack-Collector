@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 
 app.use(cors({
-    origin: '*',
+    origin: 'https://feedbacknow.netlify.app',
     methods: ["GET", "POST"],
     credentials: true,
 }));

@@ -10,6 +10,12 @@ router.post("/submit-feedback",feedbackController.createNewFeedback);
 // Route to fetch all Feedbacks
 router.get("/admin/feedbacks",feedbackController.getAllFeedback)
 
+// Temporary test route to check if backend is live
+router.get("/test", (req, res) => {
+    res.send("API is working!");
+  });
+  
+
 module.exports=router;
 
 

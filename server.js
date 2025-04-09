@@ -7,7 +7,13 @@ const feedbackRoute=require("./Routes/feedbackRoute")
 const cors=require("cors")
 
 app.use(bodyParser.json());
-app.use(cors());
+
+
+app.use(cors({
+    origin: '*',
+    methods: ["GET", "POST"],
+    credentials: true,
+}));
 
 /**
  * Stitch to Route

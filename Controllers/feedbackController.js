@@ -4,6 +4,8 @@ const feedbackModel = require("../Models/feedbackModel");
 // create new feedback
 
 exports.createNewFeedback=async(req,res)=>{
+
+    console.log("🎯 Feedback request body:", req.body)
     // Read the request body 
     const { fullName, email, feedback } = req.body;
 

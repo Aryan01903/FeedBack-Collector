@@ -1,28 +1,27 @@
 const mongoose=require("mongoose");
 
 // schema for the feedback
-const feedbackSchema=new mongoose.Schema({
-    fullName : {
-        type : String,
-        required : true
+const feedbackSchema = new mongoose.Schema({
+    fullName: {
+      type: String,
+      required: true
     },
-    email : {
-        type : String,
-        required : true,
-        validate: {
-            validator: (v) => /\S+@\S+\.\S+/.test(v),               // email validation
-            message: (props) => `${props.value} is not a valid email!`,
-        },
+    email: {
+      type: String,
+      required: true,
+      validate: {
+        validator: (v) => /\S+@\S+\.\S+/.test(v),
+        message: (props) => `${props.value} is not a valid email!`,
+      },
     },
-    feedback : {
-        type : String,
-        required : true    
-    },
-    timestamp : {
-        type : Date,
-        default : Date.now
+    feedback: {
+      type: String,
+      required: true    
     }
-},{versionKey : false})
+  }, {
+    timestamps: true, // This adds createdAt & updatedAt
+    versionKey: false
+});
 
 
 module.exports=mongoose.model("feedback",feedbackSchema)
